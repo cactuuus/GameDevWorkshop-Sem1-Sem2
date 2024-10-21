@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public float playSpeed;
+    public float playSpeed; // better private, public is good for testing
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +20,6 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         rb2d.velocity = new Vector2(horizontalInput * playSpeed, verticalInput * playSpeed);
+        print(rb2d.velocity);
     }
 }
